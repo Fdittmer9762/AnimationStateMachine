@@ -23,6 +23,18 @@ public class InputManager : MonoBehaviour {
 		if (Input.GetButtonDown ("Jump")) {
 			anim.SetTrigger ("Jump");
 		}
-	}
+
+        if (Input.GetButtonDown("Ability01")) {
+            anim.SetTrigger("Ability01");
+        }
+
+        if (Input.GetButtonDown("Ability02")) {
+            anim.SetTrigger("Ability02");
+        }
+
+        if (Input.GetButtonDown("Ability03")) {
+            anim.SetTrigger("Ability03");
+        }
+    }
 
 }
