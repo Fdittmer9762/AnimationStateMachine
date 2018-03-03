@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class Damager : MonoBehaviour {
 
-	public float damage;
+
+	public int damage, KB;
 
 	void OnTriggerEnter(Collider other)
 	{
 		Health _health = other.GetComponent<Health> ();
 
 		if (_health != null) {
-			_health.TakeDamage (damage);
+			Vector3 _dir = other.transform.position - this.transform.position;
+			_health.TakeDamage (damage, KB, _dir);
 		}
 	}
 

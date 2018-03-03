@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour {
 
-	public Animator anim;
+	//Updated, Script No Longer Used
+		//Now done through the player input check. Keeping this old script in case issues arise and we need to revert
+
+	/*public Animator anim;
 
 	private Vector3 moveInput;
 
-	void Update () {
+	void FixedUpdate () {
 		CheckInput ();
 	}
 
@@ -35,6 +38,6 @@ public class InputManager : MonoBehaviour {
         if (Input.GetButtonDown("Ability03")) {
             anim.SetTrigger("Ability03");
         }
-    }
+    }*/
 
 }

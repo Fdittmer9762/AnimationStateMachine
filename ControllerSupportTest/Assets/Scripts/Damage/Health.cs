@@ -24,9 +24,24 @@ public class Health : MonoBehaviour {
 		rb.useGravity = false;
 	}
 
-	public void TakeDamage(float _dam){
+	public void TakeDamage(int _dam, int _KB, Vector3 _dir){
+		
 		anim.SetFloat (healthPara, _dam + anim.GetFloat (healthPara));
+
+		float _force = (10 * _KB);
+
+		_force += (anim.GetFloat (healthPara) / character.weight);
+
+		_force *= .05f;
+
+		_dir *= _force;
+
 		anim.SetTrigger (damageTrigger);
+
+		anim.SetFloat ("TempX", _dir.x);
+		anim.SetFloat ("TempY", _dir.y);
+		anim.SetFloat ("TempZ", _dir.z);
+
 	}
 
 }
