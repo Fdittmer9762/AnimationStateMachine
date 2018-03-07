@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "ScriptableObject/Spawner/Round")]
 public class Round : ScriptableObject {
 
 	public AnimationCurve curve;
 	public AnimationCurve centerCV;
 
-	public int WavesPerRound;
+	[HideInInspector]public int WavesPerRound;
 	private float SD, maxSD, Center, maxRounds = 100;
 
-	public List<Wave> roundWaves = new List<Wave> ();
+	[HideInInspector]public List<Wave> roundWaves = new List<Wave> ();
 
 
 	public void CreateRound(Wave[] _waves, int _round){
+		Debug.Log ("Creating Round");
 		roundWaves.Clear();
 		maxSD = Mathf.RoundToInt(_waves.Length / 8);
 		SD = ((-.5f * maxSD) * Mathf.Cos((6.28f / maxRounds) * _round)) + (.5f * maxSD) +.5f;
@@ -28,6 +30,4 @@ public class Round : ScriptableObject {
 		float rndVal = (curve.Evaluate (Random.value) * (2*SD)) -SD;
 		roundWaves.Add (_waves[Mathf.RoundToInt(Center + Mathf.Round(rndVal))]);
 	}
-
-
 }

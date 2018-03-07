@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: BigEnemy
   m_EditorClassIdentifier: 
   EnemyType: Big Enemy
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 1982629569175568, guid: bf5d8c96da65d47c4a0ef2788beadaad,
+    type: 2}
   dangerRating: 3

@@ -11,17 +11,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4370913d83b54b2590f1bb1b99c77c7, type: 3}
   m_Name: Round1
   m_EditorClassIdentifier: 
-  roundDelay: 20
-  enemySpawnDelay: 1
-  enemiesPerSpawn: 1
-  enemies:
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 5694b0fb3fb2641f69f6e51a12f8c436, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 5694b0fb3fb2641f69f6e51a12f8c436, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: 067d5b932c0324f47bdaee1d40902fa8, type: 2}
-  - {fileID: 11400000, guid: b7b09ddea470b435582b4839fb9dbc3e, type: 2}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 3.204545
+      outSlope: 3.204545
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 3.3157907
+      outSlope: 3.3157907
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  centerCV:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.84375
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  WavesPerRound: 1
+  roundWaves:
+  - {fileID: 11400000, guid: 59e3b234abcaf466d8f6547b7df87015, type: 2}

@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
 	public Wave[] Waves;
-	private Round currentRound;												//holds the current round, used to access the current round info
+	public Round currentRound;												//holds the current round, used to access the current round info
 	private int roundNumber = 0;												//the round number of the current round, used when accessing the array of rounds
 
 	public int defaultEnemyPoolSize = 20;														//default number of enemies that the game will use, used when instancating the first pools of enemies
@@ -28,8 +28,7 @@ public class EnemySpawner : MonoBehaviour {
 			ExpandPool (smallEnemies, smallEnemySO, false, poolLocation.position);				//small enemies
 			ExpandPool (medEnemies, medEnemySO, false, poolLocation.position);					//med enemies
 			ExpandPool (bigEnemies, bigEnemySO, false, poolLocation.position);					//big enemies
-		}
-		currentRound = new Round ();															
+		}		
 		roundNumber = 1;
 		currentRound.CreateRound (Waves, roundNumber);
 		StartCoroutine (RoundManager());														//starts the round manager
@@ -73,16 +72,20 @@ public class EnemySpawner : MonoBehaviour {
 	private void ChangeRound(){
 		currentWave = 0;
 		waveEnemy = 0;	
-		currentRound.CreateRound(Waves, roundNumber);
+		roundNumber++;
+		currentRound.CreateRound (Waves, roundNumber);
 		StartCoroutine(RoundManager());
 	}
 
-	IEnumerator RoundManager(){																	
+	IEnumerator RoundManager(){		
+		print ("Starting Round");
 		for (int i = 0; i < currentRound.roundWaves.Count; i++) {
 			currentWave = i;
+			print ("Wave " + currentWave);
 			yield return new WaitForSeconds (currentRound.roundWaves [i].waveDelay);
 			waveEnemy = 0;
 			for (int a = 0; a < currentRound.roundWaves [i].enemies.Length; a++) {
+				print (waveEnemy);
 				Vector3 SP = currentRound.roundWaves[i].FindClosest (playerPos, enemySpawnPoints);
 				for(int x = 0; x < currentRound.roundWaves[i].enemiesPerSpawn; x++){
 					PullEnemy(SP);                                                                  //Calls pull enemy to activate, passes the spawn Point location 
@@ -91,7 +94,7 @@ public class EnemySpawner : MonoBehaviour {
 				}
 			}
 		}
-
+		ChangeRound ();
 	}
 
 }

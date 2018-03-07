@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/Enemy")]
+[CreateAssetMenu(menuName = "ScriptableObject/Enemy")]
 public class Enemy : ScriptableObject {
 
 	public string EnemyType= "default";												//String used to identify and compare enemy's within other scripts

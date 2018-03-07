@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Name: SmallEnemy
   m_EditorClassIdentifier: 
   EnemyType: Small Enemy
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 1891670988791778, guid: 766ba4b5783d44d76ae6bd96e08ba93f,
+    type: 2}
   dangerRating: 1
