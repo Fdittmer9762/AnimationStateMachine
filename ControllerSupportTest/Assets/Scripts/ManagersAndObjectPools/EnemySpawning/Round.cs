@@ -15,7 +15,6 @@ public class Round : ScriptableObject {
 
 
 	public void CreateRound(Wave[] _waves, int _round){
-		Debug.Log ("Creating Round");
 		roundWaves.Clear();
 		maxSD = Mathf.RoundToInt(_waves.Length / 8);
 		SD = ((-.5f * maxSD) * Mathf.Cos((6.28f / maxRounds) * _round)) + (.5f * maxSD) +.5f;

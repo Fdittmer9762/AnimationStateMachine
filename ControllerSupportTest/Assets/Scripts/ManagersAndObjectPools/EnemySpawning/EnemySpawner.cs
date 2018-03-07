@@ -31,7 +31,14 @@ public class EnemySpawner : MonoBehaviour {
 		}		
 		roundNumber = 1;
 		currentRound.CreateRound (Waves, roundNumber);
+		SortWaves ();
 		StartCoroutine (RoundManager());														//starts the round manager
+	}
+
+	private void SortWaves(){
+		foreach(Wave wave in Waves){
+			wave.CalcWaveDanger ();
+		}
 	}
 
 	private void ExpandPool(List<GameObject> _pool,Enemy enemyArch, bool toActivate, Vector3 loc){	//used to create more enemies if they are needed; pool is the list to be added to, enemy arch is the type of enemy to add, to activate is wether or not it should be active (pooled or spawned), loc is where it should be spawned  
@@ -78,14 +85,11 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	IEnumerator RoundManager(){		
-		print ("Starting Round");
 		for (int i = 0; i < currentRound.roundWaves.Count; i++) {
 			currentWave = i;
-			print ("Wave " + currentWave);
 			yield return new WaitForSeconds (currentRound.roundWaves [i].waveDelay);
 			waveEnemy = 0;
 			for (int a = 0; a < currentRound.roundWaves [i].enemies.Length; a++) {
-				print (waveEnemy);
 				Vector3 SP = currentRound.roundWaves[i].FindClosest (playerPos, enemySpawnPoints);
 				for(int x = 0; x < currentRound.roundWaves[i].enemiesPerSpawn; x++){
 					PullEnemy(SP);                                                                  //Calls pull enemy to activate, passes the spawn Point location 

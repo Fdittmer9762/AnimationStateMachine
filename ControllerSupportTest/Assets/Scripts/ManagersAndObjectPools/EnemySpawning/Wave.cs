@@ -18,7 +18,6 @@ public class Wave : ScriptableObject {
 		}
 		_enemy.transform.position = SpawnPoint;												//Move the enemy to the spawn point
 		_enemy.SetActive(true);																//Activates enemy GO
-		Debug.Log("CreatingEnemy");
 	}
 
 	public Vector3 FindClosest(Transform obj, Transform[] objToCompare){					//
@@ -33,9 +32,13 @@ public class Wave : ScriptableObject {
 		return currentClosest.position;																//after checking everything return the transform for the closest point
 	}
 
-	private void CalcWaveDanger(){
+	public void CalcWaveDanger(){
+		waveDngVal = 0;
 		foreach (Enemy enm in enemies) {
 			waveDngVal += enm.dangerRating;
 		}
+		waveDngVal *= enemiesPerSpawn * enemies.Length;
+		waveDngVal = Mathf.RoundToInt (waveDngVal / waveDelay);
+		Debug.Log (waveDngVal);
 	}
 }
