@@ -6,7 +6,9 @@ using UnityEngine;
 public class Enemy : ScriptableObject {
 
 	public string EnemyType= "default";												//String used to identify and compare enemy's within other scripts
+	[Tooltip("Prefab of this enemy")]
 	public GameObject enemyPrefab;													//Enemy Prefab used to spawn enemies
+	[Tooltip("How dangerous is the enemy")]
 	public int dangerRating;
 
 	public GameObject CreateEnemyInstance(Vector3 Pos, bool toBeActive){			//creates enemy prefab at a postion and returns the gameobject, called from enemy spawner
