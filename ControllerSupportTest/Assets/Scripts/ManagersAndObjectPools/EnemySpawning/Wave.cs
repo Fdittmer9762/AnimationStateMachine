@@ -39,6 +39,5 @@ public class Wave : ScriptableObject {
 		}
 		waveDngVal *= enemiesPerSpawn * enemies.Length;
 		waveDngVal = Mathf.RoundToInt (waveDngVal / waveDelay);
-		Debug.Log (waveDngVal);
 	}
 }
