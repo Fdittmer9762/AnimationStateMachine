@@ -596,7 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1261579323590778, guid: 8055854185c42495e9239d7a8cb3aa8c,
     type: 2}
-  playerLoc: {fileID: 0}
+  playerLoc: {fileID: 78860701}
 --- !u!1 &1120632370
 GameObject:
   m_ObjectHideFlags: 0
