@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07bd6d76bd144555b7248e0710a966c, type: 3}
   m_Name: PPPP Bolts
   m_EditorClassIdentifier: 
-  Water: {fileID: 0}
-  Fire: {fileID: 0}
-  Earth: {fileID: 0}
-  Wind: {fileID: 0}
-  Lightning: {fileID: 0}
+  Water: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}
+  Fire: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}
+  Earth: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}
+  Wind: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}
+  Lightning: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}
+  Default: {fileID: 1271926392070654, guid: 706c57f7c8f504144821ad7aafbc9abe, type: 2}

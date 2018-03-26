@@ -14,7 +14,13 @@ public class Bolt : MonoBehaviour {
 
 	void Awake(){
 		RB = GetComponent<Rigidbody> ();
+		//Vector3 tempTrans = transform.TransformDirection (this.transform.localRotati);
+		Vector3 tempTrans;
+		/*tempTrans.x = transform.rotation.x;
+		tempTrans.y = transform.rotation.y;
+		tempTrans.z = transform.rotation.z;*/
 		RB.velocity = Vector3.forward * speed;
+		print (RB.velocity.x + " " + RB.velocity.z + " " + RB.velocity.y);
 		Destroy (this.gameObject, lifetime);
 	}
 

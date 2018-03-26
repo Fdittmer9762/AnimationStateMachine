@@ -13,7 +13,7 @@ public class SetFloatUsingParam : StateMachineBehaviour {
 	[Tooltip("Will be multiplied by the modParam, value of 1 will not modify the modParam")]
 	public float input = 1f;
 
-	public override void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 		animator.SetFloat (SetParam, input * animator.GetFloat(ModParam));
 	}
