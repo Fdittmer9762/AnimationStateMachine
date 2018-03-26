@@ -2272,6 +2272,7 @@ GameObject:
   - component: {fileID: 92850706028903174}
   - component: {fileID: 124294459537734294}
   - component: {fileID: 81697257349806268}
+  - component: {fileID: 114884439742781470}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5153,7 +5154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661348493312944}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4356614048712586}
@@ -5761,14 +5762,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329950878012572}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.19, y: -1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4064911828553204}
   m_Father: {fileID: 4356614048712586}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4911874281065092
 Transform:
   m_ObjectHideFlags: 1
@@ -8583,7 +8584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28f929942b6d4ee68d5cf52a9a1230f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: ea28902e7ebf34f19ba78d3a477f338b, type: 2}
+  character: {fileID: 11400000, guid: 26f17bbb540e540b385d80a4789e420b, type: 2}
   damageTrigger: TakeDamage
   healthPara: Damage
 --- !u!114 &114118699070268264
@@ -8666,6 +8667,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114884439742781470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1661348493312944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e522513e8374276b4002e94c6c923c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 4356614048712586}
+  mouseSensitivity: 4
 --- !u!124 &124294459537734294
 Behaviour:
   m_ObjectHideFlags: 1
