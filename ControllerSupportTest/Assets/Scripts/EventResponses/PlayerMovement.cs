@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour {
 		tempPos.x = playerAnim.GetFloat ("TempX")* character.baseMoveSpeed;
 		tempPos.z = playerAnim.GetFloat ("TempZ")* character.baseMoveSpeed;
 		tempPos.y = playerAnim.GetFloat ("TempY");
+		tempPos = transform.TransformDirection(tempPos);
 
 		cc.Move (tempPos * Time.deltaTime);
 	}
